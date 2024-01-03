@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#stars {
+    background-image: url(twinkles.gif);
+    background-repeat: repeat-x;
+    display: block;
+
+    height: 82vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.filler {
+    background-image: url(twinkles.gif);
+    background-repeat: repeat-x;
+    display: block;
+
+    height: 18vh;
+    width: 100vw;
+}
+
+nav {
+    background-color: rgba(51, 48, 48, 0.35);
+    background-repeat: repeat-x;
+
+    height: 9.5vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+
+nav header{
+    color: white;
+}
+
+nav section a{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-left: 0.25vw;
+    margin-right: 0.25vw;
+}
+  
+.orbit-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+  
+#welovetheearth{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-image: url(planetearth.gif);
+    border-radius: 50%;
+    z-index: 1;
+}
+  
+#mooooon{
+    position: absolute;
+    top: 43%;
+    left: 47%;
+    width: 100px;
+    height: 100px;
+    background-image: url(mooon.gif);
+    animation: orbit 8s linear infinite;
+}
+  
+#coolstar{
+    width: 350px;
+    height: 350px;
+    background-image: url(purplestar.gif); 
+    border-radius: 50%;
+    position: absolute;
+    animation: float 35s linear infinite;
+}
+
+#asteroid{
+    width: 60px;
+    height: 60px;
+    background-image: url(asteroid.gif);
+    position: absolute;
+    animation: asteroidcrash 1.5s linear infinite;
+    z-index: 0;
+}
+  
+@keyframes orbit{
+    0%{
+      transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+
+@keyframes float{
+    0%{
+      left: 0;
+      top: 10%;
+    }
+
+    50%{
+      left: 15%;
+      top: 60%;
+    }
+    100%{
+      left: 20%;
+      top: 100%;
+    }
+}
+
+@keyframes asteroidcrash{
+    0%{
+        right: 0;
+        top: 10%;
+    }
+
+    25%{
+        right: 2%;
+        top: 12%;
+    }
+
+    100%{
+        right: 50%;
+        top: 50%;
+    }
+}
